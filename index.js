@@ -1,4 +1,6 @@
 const {BrowserWindow,app,shell} = require("electron")
+const convert = require("./handlebarsfile")
+console.log(convert("index.html",{}))
 app.whenReady().then(() => {
     let window = new BrowserWindow({
         width: 500,
@@ -6,4 +8,3 @@ app.whenReady().then(() => {
     })
     window.loadFile("index.html")
 })
-
