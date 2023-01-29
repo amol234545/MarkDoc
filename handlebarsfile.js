@@ -1,9 +1,10 @@
 const handlebars = require("handlebars")
 const fs = require("fs")
-function convertFile(filepath,data) {
+function convertFileToHbs(filepath,data,otherfilename) {
     let text = fs.readFileSync(filepath,{
         encoding: "utf-8"
     })
-    return handlebars.compile(text)(data)
+    fs.writeFile(otherfilename + ".hbs",handlebars.compile(text)(data),"utf-8",() => {})
+    return otherfilename + ".hbs"
 }
-module.exports = convertFile
+module.exports = convertFileToHbs
