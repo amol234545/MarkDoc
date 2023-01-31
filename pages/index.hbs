@@ -114,4 +114,13 @@
     <button>New</button>
     <span class="divider">|</span>
     <button>Open</button>
+    <ul>
+    {{#docs}}
+    <li>
+    <img src="{{preview}}">
+    Name:{{name}}
+    <button onclick="window.docs.open('{{name}}')">Open</button>
+    </li>
+    {{/docs}}
+    </ul>
 </html>
